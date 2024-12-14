@@ -1,9 +1,10 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
+import { Image, Platform, Pressable } from 'react-native';
+import { StyleSheet } from 'react-native-unistyles'
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { CText } from '@/components/CText';
 
 export default function HomeScreen() {
   return (
@@ -50,11 +51,15 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
       </ThemedView>
+      <CText text='Testing!' /> 
     </ParallaxScrollView>
   );
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create(theme => ({
+  pressable: {
+    backgroundColor: theme.colors.aloes
+  },
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -71,4 +76,4 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute',
   },
-});
+}));
